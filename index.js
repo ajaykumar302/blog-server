@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors');
 const Home = require('./Routes/home');
+const Story = require('./Routes/story');
 const Fitness = require('./Routes/fitness');
 const Technology = require('./Routes/technology');
 const Hollywood = require('./Routes/hollywood');
@@ -14,6 +15,10 @@ app.use(cors());
 
 app.get('/',(req,res) =>{
     res.json(Home).status(200);
+    res.end();
+})
+app.get('/story',(req,res) =>{
+    res.json(Story).status(200);
     res.end();
 })
 app.get('/fitness',(req,res) =>{
@@ -39,3 +44,5 @@ app.get('/food',(req,res) =>{
 app.listen(port, () => {
     console.log(`Connected to port ${port}✅`);
 })
+
+///https://server-blog-project.herokuapp.com
